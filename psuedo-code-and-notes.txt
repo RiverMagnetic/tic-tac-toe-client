@@ -6,6 +6,14 @@ As a player I want to see all plays in the game (X's & O's)
 As guest (a player) I want an X to appear when I click the board on my turn.
 As guest I want to take the odd turns (such as first move).
 As host I want an O to appear when I click the board on my turn.
+As a player I want to win if I get three in a row.
+As host I want to take the even turns.
+As a player I want a draw if neither wins.
+As player I want to see which side won if a player gets three in a row or see a draw if neither wins
+As a player I want to be able to play multiple games (one at a time) in a row, in one session and/or multiple sessions.
+As player I want to see the total games I won.
+As player I want to change my password with current and new password if I am signed in.
+
 
 To be Continued...
 
@@ -15,6 +23,30 @@ Has 9 empty divs.
 Each div has an ID.
 
 JS:
+
+Possibility:
+
+players are objects:
+player {
+role: guest,
+mark: X,
+turn: odd,
+
+}
+
+player {
+role: host,
+mark: O,
+turn: odd,
+
+}
+
+methods in player prototype: {
+total games won: function{}
+play: function{
+  places this.mark value in clicked empty div
+}
+
 for turns: modulus for odd/even, or array of turn number or index, or hard code numbers.
 if (empty === true) {
 
