@@ -1,0 +1,34 @@
+As player I want to signup with email, password, and password confirmation.
+As host (a player) I want to log in (into my account) with email and password if I am not signed in.
+As a player, I want to play against another player.
+As a player I want the game to start with an empty board.
+As a player I want to see all plays in the game (X's & O's)
+As guest (a player) I want an X to appear when I click the board on my turn.
+As guest I want to take the odd turns (such as first move).
+As host I want an O to appear when I click the board on my turn.
+
+To be Continued...
+
+
+HTML:
+Has 9 empty divs.
+Each div has an ID.
+
+JS:
+for turns: modulus for odd/even, or array of turn number or index, or hard code numbers.
+if (empty === true) {
+
+if (turn === odd/guest ) {
+
+on.click < Div with certain IDchange innerHTML to X >
+
+ } else if (turn === even/host) {
+
+on.click < Div with certain ID change innerHTML to O >
+
+} do I need an else statement?
+
+} do I need an else statement?
+
+
+check for winner: one of 8 configurations of 3 matching cells in a row.
