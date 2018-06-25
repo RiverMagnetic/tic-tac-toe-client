@@ -2,6 +2,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.ruff {
-  margin-left: 200px;
+body {
+  text-align: center;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
 }
