@@ -38,8 +38,6 @@ const game = {
 }
 // let turn = '<which player>'
 
-const index = game.love[0]
-
 const mark = function (index) {
   console.log(index)
 
@@ -50,6 +48,9 @@ const mark = function (index) {
 
   // if the box the user clicked on is not occupied then proceed
   if (game.marked(index) === false) {
+    // create counter for turns 0-8
+    // create a function using modulo that puts an X or O in the box depending on if the turn is even or odd
+    // isOdd(cuurentTurn) { return currentTurn % 2;}
     // put X or O in the box
     console.log('x')
   }
