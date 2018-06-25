@@ -26,33 +26,35 @@ JS:
 
 Possibility:
 
-players are objects:
+in a game there are two players (objects) (are created?) as follows:
 player {
+email:"<whatever email is signed in with first>"
 role: guest,
 mark: X,
 turn: odd,
-
 }
 
 player {
+email:"<whatever email is signed in with second>"
 role: host,
 mark: O,
-turn: odd,
-
+turn: even,
 }
 
-methods in player prototype: {
+the player prototype: {
+
+methods:[
 total games won: function{}
 play: function{
   places this.mark value in clicked empty div
-}
+}]
 
 for turns: modulus for odd/even, or array of turn number or index, or hard code numbers.
 if (empty === true) {
 
 if (turn === odd/guest ) {
 
-on.click < Div with certain IDchange innerHTML to X >
+on.click < Div with certain ID change innerHTML to X >
 
  } else if (turn === even/host) {
 
