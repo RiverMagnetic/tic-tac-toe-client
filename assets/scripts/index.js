@@ -6,6 +6,7 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
+
 $(() => {
-  // your JS code goes here
+const love = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'],
 })
