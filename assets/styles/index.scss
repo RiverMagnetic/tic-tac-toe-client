@@ -27,7 +27,7 @@ $container-color: #000;
   max-width: 370px;
   text-align: center;
 
-  & .box {
+  & .cell {
     background-color: $game-board-color;
     height: 100px;
     margin: 10px;
