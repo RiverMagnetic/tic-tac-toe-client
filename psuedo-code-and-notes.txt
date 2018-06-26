@@ -3,11 +3,11 @@ As host (a player) I want to log in (into my account) with email and password if
 As a player, I want to play against another player.
 As a player I want the game to start with an empty board.
 As a player I want to see all plays in the game (X's & O's)
-As guest (a player) I want an X to appear when I click the board on my turn.
-As guest I want to take the odd turns (such as first move).
-As host I want an O to appear when I click the board on my turn.
+As host (a player) I want an X to appear when I click the board on my turn.
+As host I want to take the odd turns (such as first move).
+As guest I want an O to appear when I click the board on my turn.
 As a player I want to win if I get three in a row.
-As host I want to take the even turns.
+As guest I want to take the even turns.
 As a player I want a draw if neither wins.
 As player I want to see which side won if a player gets three in a row or see a draw if neither wins
 As a player I want to be able to play multiple games (one at a time) in a row, in one session and/or multiple sessions.
@@ -29,14 +29,14 @@ Possibility:
 in a game there are two players (objects) (are created?) as follows:
 player {
 email:"<whatever email is signed in with first>"
-role: guest,
+role: host,
 mark: X,
 turn: odd,
 }
 
 player {
 email:"<whatever email is signed in with second>"
-role: host,
+role: guest,
 mark: O,
 turn: even,
 }
