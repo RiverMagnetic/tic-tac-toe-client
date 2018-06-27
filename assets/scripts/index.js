@@ -1,6 +1,9 @@
 'use strict'
 
 const config = require('./config.js')
+// const authEvents = require('./auth/events.js')
+// const examplesEvents = require('./examples/events.js')
+// const events = require('./events.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -8,6 +11,10 @@ const config = require('./config.js')
 // require('./example')
 
 $(() => {
+  // authEvents.addHandlers()
+  // examplesEvents.addHandlers()
+  // $('#create-account').on('submit', events.onSubmitForm)
+  // $('#cancel').on('click', events.cancelButton)
 })
 
 // set up game cells like so:
