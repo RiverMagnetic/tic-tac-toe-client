@@ -19,7 +19,7 @@ const game = {
   cells: ['', '', '', '', '', '', '', '', ''],
   love: ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'],
 
-  // is the cell the user clicked on occupied? (this function is called in events.js)
+  // is the cell the player clicked on occupied? (this function is called in events.js)
   marked: function (index) {
     if (this.cells[index] === 'X' || this.cells[index] === 'O') {
       return true
@@ -52,17 +52,18 @@ const game = {
 // either "x" or "o" ... somewhere
 const mark = function (index) {
   // console.log(index)
-  // if the cell the user clicked on is not occupied then proceed
-  if (game.marked(index) === false) {
-    // console.log(game.marked(index))
-    const affection = game.move(index)
-    // place the letter in the cell
-    $('#' + index).append(affection)
-    console.log(affection)
+// only allow player to mark the board if the game has not been won
+  if (game.checkForWin() === false) {
+  // only allow player to mark the board if the cell player clicked on has not been marked
+    if (game.marked(index) === false) {
+      // console.log(game.marked(index))
+      const affection = game.move(index)
+      // mark the board by placing the letter in the cell
+      $('#' + index).append(affection)
+      console.log(affection)
+    }
   }
-  game.checkForWin()
 }
-
 
 const addHandlers = () => {
   $('.cell').on('click', function (event) {
