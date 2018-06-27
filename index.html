@@ -27,7 +27,7 @@
   </form>
 
   <!-- sign up view -->
-  <form class="accounts" id="create-account">
+  <!-- <form class="accounts" id="create-account">
     <h2>Create An Account</h2>
     <div>
       <input name="credentials[email]" type="text" placeholder="Email">
@@ -35,7 +35,7 @@
       <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
     </div>
     <button type="submit" id="create-button" class="btn btn-default">Create New Account</button>
-  </form>
+  </form> -->
 
   <!-- login view -->
   <form class="accounts" id="account-login">
@@ -113,20 +113,23 @@
 </form>
   <!-- Modal Begins -->
 
-  <!-- <div class="modal fade" id="sign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Create An Account</h4>
     </div>
     <div class="modal-body">
       <form class="accounts" id="create-account">
-          <h2>Create An Account</h2>
           <div class= "form-group">
-            <input class="form-control" name="credentials[email]" type="text" placeholder="Email">
-            <input name="credentials[password]" type="password" placeholder="Password">
-            <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+            <!-- Maria's code to troubleshoot with if my following 3 inputs don't work:
+            <label for="name">Create Account</label>
+            <input type="text" class="form-control" name="form" id="name" placeholder="name">
+            <input type="password" class="form-control" name="form" id="password" placeholder="password"> -->
+            <input type="text" class="form-control" name="credentials[email]"  placeholder="Email">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+            <input type="password" class="form-control" name="credentials[password_confirmation]"  placeholder="Confirm Password">
           </div>
           <button type="submit" id="create-button" class="btn btn-primary">Create New Account</button>
           <button type="button" id="cancel" class="btn btn-secondary">Cancel</button>
@@ -134,7 +137,8 @@
     </div>
   </div>
 </div>
-</div> -->
+</div>
+<button id="sign-up-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Modal</button>
   <!-- Modal Ends -->
 
 
