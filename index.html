@@ -37,15 +37,19 @@
 
         <!-- login view -->
         <form class="accounts" id="account-login">
-            <h2>Log In</h2>
-            <div>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-            </div>
-            <button type="submit" id="login" class="btn btn-default">Login</button>
-          </form>
+          <h2>Log In</h2>
+          <div>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+          </div>
+          <button type="submit" id="login" class="btn btn-default">Login</button>
+        </form>
 
         <!-- game board view -->
+      <div>
+        <!-- JQuery will insert a prompt to alert the player that it is their turn into this h3 tag -->
+        <h3 id="prompt"></h3>
+        <!-- the game board -->
         <div class="container" id="game-board">
           <div class="row">
             <div class="col-xs-4 cell" id="0"></div>
@@ -62,7 +66,7 @@
             <div class="col-xs-4 cell" id="7"></div>
             <div class="col-xs-4 cell" id="8"></div>
           </div>
-
         </div>
+      </div>
     </body>
 </html>
