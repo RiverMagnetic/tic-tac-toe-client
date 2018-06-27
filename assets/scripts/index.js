@@ -55,6 +55,7 @@ const mark = function (index) {
 // only allow player to mark the board if the game has not been won
   if (game.checkForWin() === false) {
   // only allow player to mark the board if the cell player clicked on has not been marked
+  // together, these two if statements disallow player from marking board after game is over
     if (game.marked(index) === false) {
       // console.log(game.marked(index))
       const affection = game.move(index)
