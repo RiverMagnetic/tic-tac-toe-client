@@ -59,9 +59,16 @@ const mark = function (index) {
     if (game.marked(index) === false) {
       // console.log(game.marked(index))
       const affection = game.move(index)
+      console.log(affection)
       // mark the board by placing the letter in the cell
       $('#' + index).append(affection)
-      console.log(affection)
+      // prompting the player to take their turn
+      if (affection === 'X') {
+        $('#prompt').html(`O's turn!`)
+      } else if (affection === 'O') {
+        $('#prompt').html(`X's turn!`)
+      }
+      // TODO final mark in game should say "Game Over", not prompt next player to take a turn.
     }
   }
 }
