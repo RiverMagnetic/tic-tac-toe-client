@@ -1,97 +1,97 @@
-// 'use strict'
-//
-// const getFormFields = require(`../../../lib/get-form-fields`)
-//
-// const api = require('./api')
-// const ui = require('./ui')
-//
-// const onCreateExample = function (event) {
-//   event.preventDefault()
-//   console.log('onCreateExample ran!')
-//
-//   const data = getFormFields(event.target)
-//   api.create(data)
-//     .then(ui.onCreateSuccess)
-//     .catch(ui.onCreateFailure)
-// }
-//
-// const onIndexExamples = function (event) {
-//   event.preventDefault()
-//   console.log('onIndexExamples ran!')
-//
-//   api.index()
-//     .then(ui.onIndexSuccess)
-//     .catch(ui.onIndexFailure)
-// }
-//
-// const onShowExample = function (event) {
-//   event.preventDefault()
-//   console.log('onShowExample ran!')
-//
-//   const data = getFormFields(event.target)
-//   const example = data.example
-//
-//   if (example.id.length !== 0) {
-//     api.show(example)
-//       .then(ui.onShowSuccess)
-//       .catch(ui.onShowFailure)
-//   } else {
-//     $('#message').html('<p>Please provide an example id!</p>')
-//     $('#message').css('background-color', 'red')
-//     console.log('Please enter an example id!')
-//   }
-// }
-//
-// const onDeleteExample = function (event) {
-//   event.preventDefault()
-//   console.log('onDeleteExample ran!')
-//
-//   const data = getFormFields(event.target)
-//   const example = data.example
-//
-//   if (example.id.length !== 0) {
-//     api.destroy(example.id)
-//       .then(ui.onDeleteSuccess)
-//       .catch(ui.onDeleteFailure)
-//   } else {
-//     $('#message').html('<p>Please provide an example id!</p>')
-//     $('#message').css('background-color', 'red')
-//     console.log('Please provide an example id!')
-//   }
-// }
-//
-// const onUpdateExample = function (event) {
-//   event.preventDefault()
-//   console.log('onUpdateExample ran!')
-//
-//   const data = getFormFields(event.target)
-//   const example = data.example
-//
-//   if (example.text === '') {
-//     $('#message').html('<p>Text is required</p>')
-//     $('#message').css('background-color', 'red')
-//     console.log('Text is required!')
-//     return false
-//   }
-//   if (example.id.length !== 0) {
-//     api.update(data)
-//       .then(ui.onUpdateSuccess)
-//       .catch(ui.onUpdateFailure)
-//   } else {
-//     $('#message').html('<p>Please provide an example id!</p>')
-//     $('#message').css('background-color', 'red')
-//     console.log('Please provide an example id!')
-//   }
-// }
-//
-// const addHandlers = () => {
-//   $('#example-create').on('submit', onCreateExample)
-//   $('#example-index').on('submit', onIndexExamples)
-//   $('#example-show').on('submit', onShowExample)
-//   $('#example-delete').on('submit', onDeleteExample)
-//   $('#example-update').on('submit', onUpdateExample)
-// }
-//
-// module.exports = {
-//   addHandlers
-// }
+'use strict'
+
+const getFormFields = require(`../../../lib/get-form-fields`)
+
+const api = require('./api')
+const ui = require('./ui')
+
+const onCreateGame = function (event) {
+  event.preventDefault()
+  console.log('onCreateGame ran!')
+
+  const data = getFormFields(event.target)
+  api.createGame(data)
+    .then(ui.onCreateGameSuccess)
+    .catch(ui.onCreateGameFailure)
+}
+
+const onIndexGames = function (event) {
+  event.preventDefault()
+  console.log('onIndexGames ran!')
+
+  api.index()
+    .then(ui.onGameIndexSuccess)
+    .catch(ui.onGameIndexFailure)
+}
+
+const onShowGame = function (event) {
+  event.preventDefault()
+  console.log('onShowGame ran!')
+
+  const data = getFormFields(event.target)
+  const game = data.game
+
+  if (game.id.length !== 0) {
+    api.showGame(game)
+      .then(ui.onShowGameSuccess)
+      .catch(ui.onShowGameFailure)
+  } else {
+    // $('#message').html('<p>Please provide an example id!</p>')
+    $('#message').css('background-color', 'red')
+    console.log('May the force be with you!')
+  }
+}
+// //
+// // const onDeleteExample = function (event) {
+// //   event.preventDefault()
+// //   console.log('onDeleteExample ran!')
+// //
+// //   const data = getFormFields(event.target)
+// //   const example = data.example
+// //
+// //   if (example.id.length !== 0) {
+// //     api.destroy(example.id)
+// //       .then(ui.onDeleteSuccess)
+// //       .catch(ui.onDeleteFailure)
+// //   } else {
+// //     $('#message').html('<p>Please provide an example id!</p>')
+// //     $('#message').css('background-color', 'red')
+// //     console.log('Please provide an example id!')
+// //   }
+// // }
+// //
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  console.log('onUpdateGame ran!')
+
+  const data = getFormFields(event.target)
+  const game = data.game
+
+  if (game.text === '') {
+    //     $('#message').html('<p>Text is required</p>')
+    $('#message').css('background-color', 'red')
+    console.log('Letter is required!')
+    return false
+  }
+  if (game.id.length !== 0) {
+    api.update(data)
+      .then(ui.onUpdateGameSuccess)
+      .catch(ui.onUpdateGameFailure)
+  } else {
+    //     $('#message').html('<p>Please provide a game id!</p>')
+    $('#message').css('background-color', 'red')
+    console.log('Please provide a game id!')
+  }
+}
+
+const addHandlers = () => {
+  $('#login').on('submit', onCreateGame)
+  $('#game-index').on('submit', onIndexGames)
+  $('#show-game').on('submit', onShowGame)
+  // $('#example-delete').on('submit', onDeleteExample)
+  $('#game-update').on('submit', onUpdateGame)
+}
+
+module.exports = {
+  addHandlers
+}
