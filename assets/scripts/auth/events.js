@@ -8,6 +8,7 @@ const openModal = function (event) {
   console.log(data)
   console.log(data.form)
   $('#signUpModal').modal('hide')
+  $('#logInModal').modal('hide')
 }
 
 // testing export to index.js using a console log in a cancel button that I hope to use in the future...
