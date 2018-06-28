@@ -1,9 +1,9 @@
 // 'use strict'
 //
-// const config = require('../config')
+const config = require('../config')
 // const store = require('../store')
 //
-// const create = function (data) {
+// const createGame = function (data) {
 //   console.log('data: ', data)
 //   return $.ajax({
 //     url: config.apiUrl + '/examples',
@@ -26,15 +26,15 @@
 //   })
 // }
 //
-// const show = function (example) {
-//   return $.ajax({
-//     url: config.apiUrl + '/examples/' + example.id,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const showGame = function (game) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + game.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 //
 // const destroy = function (id) {
 //   return $.ajax({
@@ -58,10 +58,10 @@
 //   })
 // }
 //
-// module.exports = {
-//   create,
+module.exports = {
+//   createGame,
 //   index,
-//   show,
+  showGame
 //   destroy,
 //   update
-// }
+}
