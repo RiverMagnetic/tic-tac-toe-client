@@ -1,74 +1,74 @@
 'use strict'
 
-const onCreateSuccess = function (data) {
-  $('#message').text('Example successfully created')
+const onCreateGameSuccess = function (data) {
+  $('#message').text(`X's turn!`)
   $('#message').css('background-color', 'green')
-  console.log('onCreateSuccess ran. Data is :', data)
+  console.log('onCreateGameSuccess ran. Data is :', data)
 }
 
-const onCreateFailure = function (error) {
+const onCreateGameFailure = function (error) {
   $('#message').text('Error on creating example')
   $('#message').css('background-color', 'red')
-  console.error('onCreateFailure ran. Error is :', error)
+  console.error('onCreateGameFailure ran. Error is :', error)
 }
 
-const onIndexSuccess = function (data) {
-  $('#message').text('All Examples successfully received')
+const onGameIndexSuccess = function (data) {
+  $('#message').text('All Games successfully received')
   $('#message').css('background-color', 'green')
-  console.log('onIndexSuccess ran. Data is :', data.examples)
+  console.log('onGameIndexSuccess ran. Data is :', data.games)
 }
 
-const onIndexFailure = function (error) {
+const onGameIndexFailure = function (error) {
   $('#message').text('Error on getting examples')
   $('#message').css('background-color', 'red')
-  console.error('onIndexFailure ran. Error is :', error)
+  console.error('onGameIndexFailure ran. Error is :', error)
 }
 
-const onShowSuccess = function (data) {
-  $('#message').text('One Example successfully received')
+const onShowGameSuccess = function (data) {
+  $('#message').text('Previous game successfully received')
   $('#message').css('background-color', 'green')
-  console.log('onCreateSuccess ran. Data is :', data)
+  console.log('onShowGameSuccess ran. Data is :', data)
 }
 
-const onShowFailure = function (error) {
-  $('#message').text('Error on getting example')
+const onShowGameFailure = function (error) {
+  $('#message').text('Error on getting previous game')
   $('#message').css('background-color', 'red')
-  console.error('onShowFailure ran. Error is :', error)
+  console.error('onShowGameFailure ran. Error is :', error)
 }
 
-const onDestroySuccess = function () {
-  $('#message').text('Example successfully deleted')
-  $('#message').css('background-color', 'green')
-  console.log('Example successfully deleted')
-}
+// const onDestroySuccess = function () {
+//   $('#message').text('Example successfully deleted')
+//   $('#message').css('background-color', 'green')
+//   console.log('Example successfully deleted')
+// }
+//
+// const onDestroyFailure = function (error) {
+//   $('#message').text('Error on deleting example')
+//   $('#message').css('background-color', 'red')
+//   console.error('onDestroyFailure ran. Error is :', error)
+// }
 
-const onDestroyFailure = function (error) {
-  $('#message').text('Error on deleting example')
-  $('#message').css('background-color', 'red')
-  console.error('onDestroyFailure ran. Error is :', error)
-}
-
-const onUpdateSuccess = function () {
-  $('#message').text('Example successfully updated')
+const onUpdateGameSuccess = function () {
+  // $('#message').text('Game successfully updated')
   $('#message').css('background-color', 'green')
   console.log('Example successfully updated')
 }
 
-const onUpdateFailure = function (error) {
-  $('#message').text('Error on updating example')
+const onUpdateGameFailure = function (error) {
+  $('#message').text('Choose another square')
   $('#message').css('background-color', 'red')
-  console.error('onUpdateFailure ran. Error is :', error)
+  console.error('onUpdateGameFailure ran. Error is :', error)
 }
 
 module.exports = {
-  onCreateSuccess,
-  onCreateFailure,
-  onIndexSuccess,
-  onIndexFailure,
-  onShowSuccess,
-  onShowFailure,
-  onDestroySuccess,
-  onDestroyFailure,
-  onUpdateSuccess,
-  onUpdateFailure
+  onCreateGameSuccess,
+  onCreateGameFailure,
+  onGameIndexSuccess,
+  onGameIndexFailure,
+  onShowGameSuccess,
+  onShowGameFailure,
+  // onDestroySuccess,
+  // onDestroyFailure,
+  onUpdateGameSuccess,
+  onUpdateGameFailure
 }
