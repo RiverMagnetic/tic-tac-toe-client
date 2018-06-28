@@ -25,7 +25,7 @@ const onGameIndexFailure = function (error) {
 }
 
 const onShowGameSuccess = function (data) {
-  $('#message').text('Previous game successfully received')
+  $('#message').text('Previous game successfully retrieved')
   $('#message').css('background-color', 'green')
   console.log('onShowGameSuccess ran. Data is :', data)
 }
