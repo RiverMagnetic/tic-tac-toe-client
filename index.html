@@ -22,10 +22,11 @@
 
   <!-- homepage view -->
   <form class="homepage">
-    <button type="submit" id="login-path-button" class="btn btn-default">Sign In</button>
-    <button type="submit" id="create-path-button" class="btn btn-default">Create an Account</button>
+    <button id="sign-in-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#logInModal">Sign In</button>
+    <button id="sign-up-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Create Account</button>
   </form>
-
+  <!-- <button type="submit" id="login-path-button" class="btn btn-default">Sign In</button>
+  <button type="submit" id="create-path-button" class="btn btn-default">Create an Account</button> -->
   <!-- sign up view -->
   <!-- <form class="accounts" id="create-account">
     <h2>Create An Account</h2>
@@ -38,14 +39,13 @@
   </form> -->
 
   <!-- login view -->
-  <form class="accounts" id="account-login">
+  <!-- <form class="accounts" id="account-login">
     <h2>Log In</h2>
     <div>
       <input type="text" name="credentials[email]" placeholder="Email">
       <input type="password" name="credentials[password]" placeholder="Password">
     </div>
-    <button type="submit" id="login" class="btn btn-default">Login</button>
-  </form>
+  </form> -->
 
   <!-- game board view -->
   <div>
@@ -72,47 +72,41 @@
   </div>
   <!-- responsive message to player the top of the forms, to be updated with JQuery -->
   <p id="message"></p>
-  <form id="example-create" class="border">
+<!--
+
+<form id="game-index" class="border">
   <fieldset>
-    <legend>Create One Example</legend>
-    <input type="text" name="example[text]" placeholder="Enter Example Text">
-    <input type="submit" value="Create Example">
+    <legend>Game History</legend>
+    <input type="submit" value="Retrieve">
+  </fieldset>
+</form> -->
+
+<form id="game-show" class="border">
+  <fieldset>
+    <h3>Restore Previous Game</h3>
+      <!-- <input type="text" name="game[id]" placeholder="Enter Game ID"> -->
+      <input type="submit" value="Restore">
   </fieldset>
 </form>
 
-<form id="example-index" class="border">
+<form id="game-delete" class="border">
   <fieldset>
-    <legend>Get All Examples</legend>
-    <input type="submit" value="Get All Examples">
+    <h3>Quit Game</h3>
+    <!-- <input type="text" name="example[id]" placeholder="Enter Game ID"> -->
+    <input type="submit" value="Quit">
   </fieldset>
 </form>
 
-<form id="example-show" class="border">
-  <fieldset>
-    <legend>Get One Example</legend>
-      <input type="text" name="example[id]" placeholder="Enter Example ID">
-      <input type="submit">
-  </fieldset>
-</form>
-
-<form id="example-delete" class="border">
-  <fieldset>
-    <legend>Delete One Example</legend>
-    <input type="text" name="example[id]" placeholder="Enter Example ID">
-    <input type="submit" value="Delete Example">
-  </fieldset>
-</form>
-
-<form id="example-update" class="border">
+<!-- <form id="game-update" class="border">
   <fieldset>
     <legend>Update One Example</legend>
     <input type="text" name="example[id]" placeholder="Enter Example ID">
     <input type="text" name="example[text]" placeholder="Enter Example Text">
     <input type="submit" value="Update Example">
   </fieldset>
-</form>
-  <!-- Modal Begins -->
+</form> -->
 
+  <!-- Sign Up Modal Begins -->
   <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
   <div class="modal-content">
@@ -132,16 +126,42 @@
             <input type="password" class="form-control" name="credentials[password_confirmation]"  placeholder="Confirm Password">
           </div>
           <button type="submit" id="create-button" class="btn btn-primary">Create New Account</button>
-          <button type="button" id="cancel" class="btn btn-secondary">Cancel</button>
+          <button type="button" id="cancel-create-account" class="btn btn-secondary">Cancel</button>
         </form>
     </div>
   </div>
 </div>
 </div>
-<button id="sign-up-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Modal</button>
-  <!-- Modal Ends -->
+  <!-- Sign Up Modal Ends -->
 
-
+  <!-- Log In Modal Begins -->
+  <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+          </div>
+          <div class="modal-body">
+            <form class="accounts" id="log-in">
+              <div class="form-group">
+                <!-- <label for="name">Sign In</label> -->
+                <!-- <input type="text" class="form-control" name="form" id="name" placeholder="name">
+                <input type="password" class="form-control" name="form" id="password" placeholder="password"> -->
+                  <!-- <h2>Log In</h2> -->
+                  <div>
+                    <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+                    <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                  </div>
+              </div>
+              <button type="submit" id="login" class="btn btn-primary">Let's Play!</button>
+              <button type="button" id='cancel-log-in' class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- Log In Modal Ends -->
 
 </body>
 
