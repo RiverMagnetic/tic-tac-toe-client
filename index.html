@@ -26,7 +26,7 @@
     <button id="sign-up-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Create Account</button>
   </form>
   <!-- <button type="submit" id="login-path-button" class="btn btn-default">Sign In</button>
-  <button type="submit" id="create-path-button" class="btn btn-default">Create an Account</button> -->
+  <button type="submit" id="create-account-path-button" class="btn btn-default">Create an Account</button> -->
   <!-- sign up view -->
   <!-- <form class="accounts" id="create-account">
     <h2>Create An Account</h2>
@@ -35,7 +35,7 @@
       <input name="credentials[password]" type="password" placeholder="Password">
       <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
     </div>
-    <button type="submit" id="create-button" class="btn btn-default">Create New Account</button>
+    <button type="submit" id="create-account-button" class="btn btn-default">Create New Account</button>
   </form> -->
 
   <!-- login view -->
@@ -49,8 +49,10 @@
 
   <!-- game board view -->
   <div>
-    <!-- JQuery will insert a prompt to alert the player that it is their turn into this h3 tag -->
-    <h3 id="prompt"></h3>
+    <!-- JQuery will insert a prompt to alert the player that it is their turn and other messaging relating to the game and forms into this h3 tag -->
+    <h3 id="message"></h3>
+
+
     <!-- the game board -->
     <div class="container" id="game-board">
       <div class="row">
@@ -70,10 +72,8 @@
       </div>
     </div>
   </div>
-  <!-- responsive message to player the top of the forms, to be updated with JQuery -->
-  <p id="message"></p>
-<!--
 
+<!--
 <form id="game-index" class="border">
   <fieldset>
     <legend>Game History</legend>
@@ -81,7 +81,7 @@
   </fieldset>
 </form> -->
 
-<form id="game-show" class="border">
+<form id="show-game" class="border">
   <fieldset>
     <h3>Restore Previous Game</h3>
       <!-- <input type="text" name="game[id]" placeholder="Enter Game ID"> -->
@@ -125,7 +125,7 @@
             <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
             <input type="password" class="form-control" name="credentials[password_confirmation]"  placeholder="Confirm Password">
           </div>
-          <button type="submit" id="create-button" class="btn btn-primary">Create New Account</button>
+          <button type="submit" id="create-account-button" class="btn btn-primary">Create New Account</button>
           <button type="button" id="cancel-create-account" class="btn btn-secondary">Cancel</button>
         </form>
     </div>
