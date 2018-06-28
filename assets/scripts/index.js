@@ -1,20 +1,20 @@
 'use strict'
 
-const config = require('./config.js')
-// const authEvents = require('./auth/events.js')
-// const examplesEvents = require('./examples/events.js')
-// const events = require('./events.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
+const config = require('./config')
+const authEvents = require('./auth/events')
+// const gameEvents = require('./game/events')
+
 $(() => {
   // authEvents.addHandlers()
-  // examplesEvents.addHandlers()
-  // $('#create-account').on('submit', events.onSubmitForm)
-  // $('#cancel').on('click', events.cancelButton)
+  // // gameEvents.addHandlers()
+  // $('#create-account').on('submit', authEvents.openModal)
+  $('#cancel-create-account').on('click', authEvents.cancelSignUpButton)
 })
 
 // set up game cells like so:
@@ -26,7 +26,7 @@ const game = {
   cells: ['', '', '', '', '', '', '', '', ''],
   love: ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'],
 
-  // is the cell the player clicked on occupied? (this function is called in events.js)
+  // is the cell the player clicked on occupied? (this function is called in game/events.js)
   marked: function (index) {
     if (this.cells[index] === 'X' || this.cells[index] === 'O') {
       return true
