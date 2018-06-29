@@ -14,7 +14,9 @@ However, I did well at recognizing early on that my wireframes needed to be full
 
 Because I put in the time to do so at that point, the mistake of not doing it earlier didn't end up impacting my code.
 
-I had to refactor part of my wireframes a little later (in conjunction with refactoring my user stories), but from my experience (which admittedly is limited to this year), my understanding is that such things are par for the course.
+I had to refactor part of my wireframes a little later (in conjunction with refactoring my user stories): https://github.com/RiverMagnetic/tic-tac-toe-client/blob/master/wireframes/turn-logic-refactor-tic-tac-toe-wireframe.jpg
+
+... but from my experience (which admittedly is limited to this year), my understanding is that such things are par for the course.
 
 
 Each day I made a sprint schedule that I knew was highly improbable to meet. The purpose of this was to:
