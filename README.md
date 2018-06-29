@@ -11,5 +11,3 @@ Each day I made a sprint schedule that I knew was highly improbable to meet. The
 - to try to avoid going down too many rabbit holes (since the next thing on the schedule was always minutes away).
 
 I think it was a worthy experiment. I believe that the first project we are given to do in General Assembly is not only about the project content. It's also about trying and learning what project management approaches serve us or don't in this environment, and refactoring our approaches accordingly for next time. I like how I've approached the project so far and will refactor according to what I learn as I continue to improve it.
-
-https://github.com/RiverMagnetic/tic-tac-toe-client/blob/master/wireframes/turn-logic-refactor-tic-tac-toe-wireframe.jpg
