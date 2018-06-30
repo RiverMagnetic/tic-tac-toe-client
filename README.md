@@ -29,3 +29,7 @@ I think it was a worthy experiment. I believe that the first project we are give
 
 
 I used source control to keep track of changes in my project. Although I haven't experienced any actual setbacks in terms of lost work, commiting as frequently as I think I should is a work in progress. My habits with this aren't as good as I'd like them to be so far, but I'm continually taking notice, thinking about how to do better, and experimenting with approaches... I'm definitely improving!
+
+
+
+I solved problems that came up along the way by using console logs, checking the console for error messages, doing research on the internet, looking over what we covered in class, asking questions of instructors, and using the issue queue. I got in the habit of checking how my app was rendering on my local browser every time I added something, so that if anything went wrong I wouldn't wonder how far back I made a mistake.
