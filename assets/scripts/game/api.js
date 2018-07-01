@@ -15,7 +15,7 @@ const config = require('../config')
 //     // data: data
 //   })
 // }
-//
+//GET all games: 
 // const index = function () {
 //   return $.ajax({
 //     url: config.apiUrl + '/examples',
@@ -25,7 +25,7 @@ const config = require('../config')
 //     }
 //   })
 // }
-//
+//GET one game:
 const showGame = function (game) {
   return $.ajax({
     url: config.apiUrl + '/games/' + game.id,
@@ -36,15 +36,7 @@ const showGame = function (game) {
   })
 }
 //
-// const destroy = function (id) {
-//   return $.ajax({
-//     url: config.apiUrl + '/examples/' + id,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+// We don't need DELETE for the game API
 //
 // const update = function (data) {
 //   return $.ajax({
