@@ -28,7 +28,7 @@ Each day I made a sprint schedule that I knew was highly improbable to meet. The
 I think it was a worthy experiment. I believe that the first project we are given to do in General Assembly is not only about the project content. It's also about trying and learning what project management approaches serve us or don't in this environment, and refactoring our approaches accordingly for next time. I like how I've approached the project so far and will refactor according to what I learn as I continue to improve it.
 
 
-I used source control to keep track of changes in my project. Although I haven't experienced any actual setbacks in terms of lost work, commiting as frequently as I think I should is a work in progress. My habits with this aren't as good as I'd like them to be so far, but I'm continually taking notice, thinking about how to do better, and experimenting with approaches... I'm definitely improving!
+I used source control to keep track of changes in my project. Although I haven't experienced any actual setbacks in terms of lost work, committing as frequently as I think I should is a work in progress. My habits with this aren't as good as I'd like them to be so far, but I'm continually taking notice, thinking about how to do better, and experimenting with approaches... I'm definitely improving!
 
 
 
