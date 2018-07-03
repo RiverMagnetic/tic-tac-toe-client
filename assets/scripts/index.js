@@ -6,7 +6,7 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const config = require('./config')
+// const config = require('./config')
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
 
@@ -40,20 +40,17 @@ $(() => {
       // win possibilities: rows[0, 1, 2], [3, 4, 5], [6, 7, 8], columns [0,3,6], [1,4,7], [2,5,8], diagonals [0,4,8], [2,4,6]
       if ((cell[0] !== '' && cell[0] === cell[1] && cell[1] === cell[2]) || (cell[3] !== '' && cell[3] === cell[4] && cell[4] === cell[5]) || (cell[6] !== '' && cell[6] === cell[7] && cell[7] === cell[8]) || (cell[0] !== '' && cell[0] === cell[3] && cell[3] === cell[6]) || (cell[1] !== '' && cell[1] === cell[4] && cell[4] === cell[7]) || (cell[2] !== '' && cell[2] === cell[5] && cell[5] === cell[8]) || (cell[0] !== '' && cell[0] === cell[4] && cell[4] === cell[8]) || (cell[2] !== '' && cell[2] === cell[4] && cell[4] === cell[6])) {
         win = true
-        $('#message').html(`You win!`)
         console.log(win)
         return win
       } else {
         console.log(win)
         return win
       }
+    },
+    checkForWinMsg: function () {
+      $('#message').html(`You win!`)
     }
   }
-
-  // now that you have the index of the cell that was clicked,
-  // and you know which player is currently playing,
-  // find a way to record the move at it's given index for this player
-  // either "x" or "o" ... somewhere
 
   const mark = function (index) {
     // console.log(index)
@@ -68,6 +65,9 @@ $(() => {
         // mark the board by placing the letter in the cell
         $('#' + index).append(affection)
         // prompting the player to take their turn
+        if (game.checkForWin()) {
+          game.checkForWinMsg()
+        }
         if (affection === 'X') {
           $('#message').html(`O's turn!`)
         } else if (affection === 'O') {
