@@ -17,6 +17,7 @@ const openModal = function (event) {
 const onSignUp = function (event) {
   event.preventDefault()
   console.log('sign up ran!')
+}
 // testing export to index.js using a console log in a cancel button that I hope to use in the future...
 const cancelSignUpButton = function (event) {
   console.log('cancelSiginUp creation!')
