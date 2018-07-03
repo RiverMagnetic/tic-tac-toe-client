@@ -1,7 +1,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 
-// const api = require('./api')
-// const ui = require('./ui')
+const api = require('./api')
+const ui = require('./ui')
 // Using your knowledge of jQuery write a function, 
 // onSubmitForm or openModal, that console logs the input in the input field when "save changes" is clicked
 // this will be referenced in index.js
@@ -14,9 +14,9 @@ const openModal = function (event) {
   $('#signUpModal').modal('hide')
   $('#logInModal').modal('hide')
 }
-// const onSignUp = function (event) {
-//   event.preventDefault()
-//   console.log('sign up ran!')
+const onSignUp = function (event) {
+  event.preventDefault()
+  console.log('sign up ran!')
 // testing export to index.js using a console log in a cancel button that I hope to use in the future...
 const cancelSignUpButton = function (event) {
   console.log('cancelSiginUp creation!')
@@ -57,7 +57,7 @@ const cancelSignUpButton = function (event) {
 // }
 
 const addHandlers = () => {
-  // $('#sign-up').on('submit', onSignUp)
+  $('#sign-up').on('submit', onSignUp)
   // $('#sign-in').on('submit', onSignIn)
   // $('#sign-out').on('submit', onSignOut)
   // $('#change-password').on('submit', onChangePassword)
@@ -65,6 +65,6 @@ const addHandlers = () => {
 
 module.exports = {
   openModal,
-  // addHandlers,
+  addHandlers,
   cancelSignUpButton
 }
