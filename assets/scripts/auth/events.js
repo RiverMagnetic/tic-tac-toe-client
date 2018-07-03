@@ -17,26 +17,27 @@ const openModal = function (event) {
 const onSignUp = function (event) {
   event.preventDefault()
   console.log('sign up ran!')
+    const data = getFormFields(this)
+  api.signUp(data)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
 }
+
 // testing export to index.js using a console log in a cancel button that I hope to use in the future...
 const cancelSignUpButton = function (event) {
   console.log('cancelSiginUp creation!')
 }
-//   const data = getFormFields(this)
-//   api.signUp(data)
-//     .then(ui.signUpSuccess)
-//     .catch(ui.signUpFailure)
-// }
 
-// const onSignIn = function (event) {
-//   event.preventDefault()
-//   console.log('sign in ran!')
 
-//   const data = getFormFields(this)
-//   api.signIn(data)
-//     .then(ui.signInSuccess)
-//     .catch(ui.signInFailure)
-// }
+const onSignIn = function (event) {
+  event.preventDefault()
+  console.log('sign in ran!')
+
+  const data = getFormFields(this)
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
+}
 
 // const onSignOut = function (event) {
 //   event.preventDefault()
@@ -59,7 +60,7 @@ const cancelSignUpButton = function (event) {
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
-  // $('#sign-in').on('submit', onSignIn)
+  $('#sign-in').on('submit', onSignIn)
   // $('#sign-out').on('submit', onSignOut)
   // $('#change-password').on('submit', onChangePassword)
 }
