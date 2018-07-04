@@ -6,7 +6,7 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const config = require('./config')
+// const config = require('./config')
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
 
@@ -15,7 +15,7 @@ $(() => {
   //   0 | 1 | 2
   //   3 | 4 | 5
   //   6 | 7 | 8
-
+  
   const game = {
     cells: ['', '', '', '', '', '', '', '', ''],
     love: ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'],
@@ -47,11 +47,13 @@ $(() => {
         return win
       }
     },
-    checkForWinMsg: function () {
-      $('#message').html(`You win!`)
+    //this method is called in the mark function, 
+    // in which affection is defined and ultimately passed in to the method
+    checkForWinMsg: function (affection) {
+      $('#message').html(`${affection} wins!`)
     }
   }
-
+  
   const mark = function (index) {
     // console.log(index)
   // only allow player to mark the board if the game has not been won
@@ -73,7 +75,11 @@ $(() => {
         } else if (affection === 'O') {
           $('#message').html(`X's turn!`)
         }
-        // TODO final mark in game should say "Game Over", not tell next player to take a turn.
+        if (game.checkForWin(affection) === true) {
+          game.checkForWinMsg(affection)
+        }
+        // TODO if there is no winner, and there are no empty strings in the love array (which means the game 
+        // is over), final mark in game should say "It's a draw!", not tell next player to take a turn. 
       }
     }
   }
@@ -90,7 +96,7 @@ $(() => {
 
   // authEvents.addHandlers()
   gameEvents.addHandlers()
-  $('#create-account').on('submit', authEvents.openModal)
+  $('#sign-up').on('submit', authEvents.openModal)
   $('#cancel-create-account').on('click', authEvents.cancelSignUpButton)
 })
 // module.exports = {

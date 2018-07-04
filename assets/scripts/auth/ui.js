@@ -27,39 +27,39 @@ const signInFailure = function (error) {
   console.error('signInFailure ran. Error is :', error)
 }
 
-const signOutSuccess = function () {
-  $('#message').text('Signed out successfully')
-  $('#message').css('background-color', 'green')
-  console.log('signOutSuccess ran and nothing was returned!')
-  store.user = null
-}
+// const signOutSuccess = function () {
+//   $('#message').text('Signed out successfully')
+//   $('#message').css('background-color', 'green')
+//   console.log('signOutSuccess ran and nothing was returned!')
+//   store.user = null
+// }
 
-const signOutFailure = function (error) {
-  $('#message').text('Error on sign out')
-  $('#message').css('background-color', 'red')
-  console.error('signOutFailure ran. Error is :', error)
-}
+// const signOutFailure = function (error) {
+//   $('#message').text('Error on sign out')
+//   $('#message').css('background-color', 'red')
+//   console.error('signOutFailure ran. Error is :', error)
+// }
 
-const changePasswordSuccess = function () {
-  $('#message').text('Changed password successfully')
-  $('#message').css('background-color', 'green')
-  console.log('changePasswordSuccess ran and nothing was returned!')
-}
+// const changePasswordSuccess = function () {
+//   $('#message').text('Changed password successfully')
+//   $('#message').css('background-color', 'green')
+//   console.log('changePasswordSuccess ran and nothing was returned!')
+// }
 
-const changePasswordFailure = function (error) {
-  $('#message').text('Error on change password')
-  $('#message').css('background-color', 'red')
-  console.error('changePasswordFailure ran. Error is :', error)
-}
+// const changePasswordFailure = function (error) {
+//   $('#message').text('Error on change password')
+//   $('#message').css('background-color', 'red')
+//   console.error('changePasswordFailure ran. Error is :', error)
+// }
 
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure,
-  signOutSuccess,
-  signOutFailure,
-  changePasswordSuccess,
-  changePasswordFailure
+  signInFailure
+  // ,
+//   signOutSuccess,
+//   signOutFailure,
+//   changePasswordSuccess,
+//   changePasswordFailure
 }
-

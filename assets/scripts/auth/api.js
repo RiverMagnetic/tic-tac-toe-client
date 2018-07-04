@@ -21,32 +21,33 @@ const signIn = function (data) {
   })
 }
 
-const signOut = function () {
-  return $.ajax({
-    url: config.apiUrl + '/sign-out',
-    method: 'DELETE',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
+// const signOut = function () {
+//   return $.ajax({
+//     url: config.apiUrl + '/sign-out',
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
-const changePassword = function (data) {
-  console.log('data is ', data)
-  return $.ajax({
-    url: config.apiUrl + '/change-password',
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-    // data: data
-  })
-}
+// const changePassword = function (data) {
+//   console.log('data is ', data)
+//   return $.ajax({
+//     url: config.apiUrl + '/change-password',
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//     // data: data
+//   })
+// }
 
 module.exports = {
   signUp,
-  signIn,
-  signOut,
-  changePassword
+  signIn
+// ,
+//   signOut,
+//   changePassword
 }
