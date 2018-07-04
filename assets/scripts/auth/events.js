@@ -24,9 +24,9 @@ const onSignUp = function (event) {
 }
 
 // testing export to index.js using a console log in a cancel button that I hope to use in the future...
-const cancelSignUpButton = function (event) {
-  console.log('cancelSiginUp creation!')
-}
+// const cancelSignUpButton = function (event) {
+//   console.log('cancelSiginUp creation!')
+// }
 
 
 const onSignIn = function (event) {
@@ -67,6 +67,7 @@ const addHandlers = () => {
 
 module.exports = {
   openModal,
-  addHandlers,
-  cancelSignUpButton
+  addHandlers
+  // ,
+  // cancelSignUpButton
 }
