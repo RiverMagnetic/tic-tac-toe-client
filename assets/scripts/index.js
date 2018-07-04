@@ -8,7 +8,7 @@
 
 const game = require('./game')
 const authEvents = require('./auth/events')
-
+const gameEvents = require('./game/events')
 
 
 
@@ -16,11 +16,11 @@ const authEvents = require('./auth/events')
 $(() => {
   
 
-  create a function to hold event handlers
+  // create a function to hold event handlers
   const addHandlers = () => {
     $('.cell').on('click', function (event) {
       event.preventDefault()
-      mark(event.target.id)
+      game.mark(event.target.id)
     })
   }
   // call the addHandlers function that was just defined
