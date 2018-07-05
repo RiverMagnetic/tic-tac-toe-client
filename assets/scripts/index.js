@@ -28,7 +28,7 @@ $(() => {
 
   authEvents.addHandlers()
   gameEvents.addHandlers()
-
+  $('#sign-up').on('submit', authEvents.openModal)
   $('#cancel-create-account').on('click', authEvents.cancelSignUpButton)
 })
 // module.exports = {
