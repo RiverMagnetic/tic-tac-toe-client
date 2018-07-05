@@ -1,7 +1,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 
 const authApi = require('./authApi')
-const ui = require('./ui')
+const authUi = require('./authUi')
 // Using your knowledge of jQuery write a function, 
 // onSubmitForm or openModal, that console logs the input in the input field when "save changes" is clicked
 // this will be referenced in index.js
@@ -19,8 +19,8 @@ const onSignUp = function (event) {
   console.log('sign up ran!')
     const data = getFormFields(this)
   authApi.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+    .then(authUi.signUpSuccess)
+    .catch(authUi.signUpFailure)
 }
 
 // testing export to index.js using a console log in a cancel button that I hope to use in the future...
@@ -35,8 +35,8 @@ const onSignIn = function (event) {
 
   const data = getFormFields(this)
   authApi.signIn(data)
-    .then(ui.signInSuccess)
-    .catch(ui.signInFailure)
+    .then(authUi.signInSuccess)
+    .catch(authUi.signInFailure)
 }
 
 // const onSignOut = function (event) {
@@ -44,8 +44,8 @@ const onSignIn = function (event) {
 //   console.log('sign out ran')
 
 //   authApi.signOut()
-//     .then(ui.signOutSuccess)
-//     .catch(ui.signOutFailure)
+//     .then(authUi.signOutSuccess)
+//     .catch(authUi.signOutFailure)
 // }
 
 // const onChangePassword = function (event) {
@@ -54,8 +54,8 @@ const onSignIn = function (event) {
 
 //   const data = getFormFields(this)
 //   authApi.changePassword(data)
-//     .then(ui.changePasswordSuccess)
-//     .catch(ui.changePasswordFailure)
+//     .then(authUi.changePasswordSuccess)
+//     .catch(authUi.changePasswordFailure)
 // }
 
 const addHandlers = () => {

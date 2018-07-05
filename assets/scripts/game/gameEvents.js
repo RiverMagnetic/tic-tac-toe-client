@@ -3,7 +3,7 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const gameApi = require('./gameApi')
-const ui = require('./ui')
+const gameUi = require('./gameUi')
 
 const onCreateGame = function (event) {
   event.preventDefault()
@@ -11,8 +11,8 @@ const onCreateGame = function (event) {
 
   const data = getFormFields(event.target)
   gameApi.createGame(data)
-    .then(ui.onCreateGameSuccess)
-    .catch(ui.onCreateGameFailure)
+    .then(gameUi.onCreateGameSuccess)
+    .catch(gameUi.onCreateGameFailure)
 }
 
 const onIndexGames = function (event) {
@@ -20,8 +20,8 @@ const onIndexGames = function (event) {
   console.log('onIndexGames ran!')
 
   gameApi.index()
-    .then(ui.onGameIndexSuccess)
-    .catch(ui.onGameIndexFailure)
+    .then(gameUi.onGameIndexSuccess)
+    .catch(gameUi.onGameIndexFailure)
 }
 
 const onShowGame = function (event) {
@@ -33,8 +33,8 @@ const onShowGame = function (event) {
 
   if (game.id.length !== 0) {
     gameApi.showGame(game)
-      .then(ui.onShowGameSuccess)
-      .catch(ui.onShowGameFailure)
+      .then(gameUi.onShowGameSuccess)
+      .catch(gameUi.onShowGameFailure)
   } else {
     // $('#message').html('<p>Please provide an example id!</p>')
     $('#message').css('background-color', 'red')
@@ -51,8 +51,8 @@ const onShowGame = function (event) {
 // //
 // //   if (example.id.length !== 0) {
 // //     gameApi.destroy(example.id)
-// //       .then(ui.onDeleteSuccess)
-// //       .catch(ui.onDeleteFailure)
+// //       .then(gameUi.onDeleteSuccess)
+// //       .catch(gameUi.onDeleteFailure)
 // //   } else {
 // //     $('#message').html('<p>Please provide an example id!</p>')
 // //     $('#message').css('background-color', 'red')
@@ -75,8 +75,8 @@ const onUpdateGame = function (event) {
   }
   if (game.id.length !== 0) {
     gameApi.update(data)
-      .then(ui.onUpdateGameSuccess)
-      .catch(ui.onUpdateGameFailure)
+      .then(gameUi.onUpdateGameSuccess)
+      .catch(gameUi.onUpdateGameFailure)
   } else {
     //     $('#message').html('<p>Please provide a game id!</p>')
     $('#message').css('background-color', 'red')
