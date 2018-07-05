@@ -2,8 +2,8 @@
 // element.id = 'myDiv'
 // element.innerHTML = 'Hello World!'
 // document.body.appendChild(element)
-// const authEvents = require('./auth/events')
 
+// const authEvents = require('./auth/events')
 // const config = require('./config')
 
 // set up game cells like so:
