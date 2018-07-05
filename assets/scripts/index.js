@@ -7,8 +7,8 @@
 // require('./example')
 
 const game = require('./game')
-const authEvents = require('./auth/events')
-const gameEvents = require('./game/events')
+const authEvents = require('./auth/authEvents')
+const gameEvents = require('./game/gameEvents')
 
 
 

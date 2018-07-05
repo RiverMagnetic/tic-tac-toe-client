@@ -1,6 +1,6 @@
 const getFormFields = require('../../../lib/get-form-fields')
 
-const api = require('./api')
+const authApi = require('./authApi')
 const ui = require('./ui')
 // Using your knowledge of jQuery write a function, 
 // onSubmitForm or openModal, that console logs the input in the input field when "save changes" is clicked
@@ -18,7 +18,7 @@ const onSignUp = function (event) {
   event.preventDefault()
   console.log('sign up ran!')
     const data = getFormFields(this)
-  api.signUp(data)
+  authApi.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
 }
@@ -34,7 +34,7 @@ const onSignIn = function (event) {
   console.log('sign in ran!')
 
   const data = getFormFields(this)
-  api.signIn(data)
+  authApi.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
@@ -43,7 +43,7 @@ const onSignIn = function (event) {
 //   event.preventDefault()
 //   console.log('sign out ran')
 
-//   api.signOut()
+//   authApi.signOut()
 //     .then(ui.signOutSuccess)
 //     .catch(ui.signOutFailure)
 // }
@@ -53,7 +53,7 @@ const onSignIn = function (event) {
 //   console.log('change password ran!')
 
 //   const data = getFormFields(this)
-//   api.changePassword(data)
+//   authApi.changePassword(data)
 //     .then(ui.changePasswordSuccess)
 //     .catch(ui.changePasswordFailure)
 // }

@@ -2,7 +2,7 @@
 
 const getFormFields = require(`../../../lib/get-form-fields`)
 
-const api = require('./api')
+const gameApi = require('./gameApi')
 const ui = require('./ui')
 
 const onCreateGame = function (event) {
@@ -10,7 +10,7 @@ const onCreateGame = function (event) {
   console.log('onCreateGame ran!')
 
   const data = getFormFields(event.target)
-  api.createGame(data)
+  gameApi.createGame(data)
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
 }
@@ -19,7 +19,7 @@ const onIndexGames = function (event) {
   event.preventDefault()
   console.log('onIndexGames ran!')
 
-  api.index()
+  gameApi.index()
     .then(ui.onGameIndexSuccess)
     .catch(ui.onGameIndexFailure)
 }
@@ -32,7 +32,7 @@ const onShowGame = function (event) {
   const game = data.game
 
   if (game.id.length !== 0) {
-    api.showGame(game)
+    gameApi.showGame(game)
       .then(ui.onShowGameSuccess)
       .catch(ui.onShowGameFailure)
   } else {
@@ -50,7 +50,7 @@ const onShowGame = function (event) {
 // //   const example = data.example
 // //
 // //   if (example.id.length !== 0) {
-// //     api.destroy(example.id)
+// //     gameApi.destroy(example.id)
 // //       .then(ui.onDeleteSuccess)
 // //       .catch(ui.onDeleteFailure)
 // //   } else {
@@ -74,7 +74,7 @@ const onUpdateGame = function (event) {
     return false
   }
   if (game.id.length !== 0) {
-    api.update(data)
+    gameApi.update(data)
       .then(ui.onUpdateGameSuccess)
       .catch(ui.onUpdateGameFailure)
   } else {
