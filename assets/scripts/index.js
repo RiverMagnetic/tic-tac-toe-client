@@ -14,7 +14,9 @@ const gameEvents = require('./game/gameEvents')
 
 
 $(() => {
-  
+
+  $('#game-board').hide()
+  $('#sign-out-modal').hide()
 
   // create a function to hold event handlers
   const addHandlers = () => {
@@ -29,7 +31,6 @@ $(() => {
   authEvents.addHandlers()
   gameEvents.addHandlers()
   $('#sign-up').on('submit', authEvents.openModal)
-  $('#cancel-create-account').on('click', authEvents.cancelSignUpButton)
 })
 // module.exports = {
 //   addHandlers
