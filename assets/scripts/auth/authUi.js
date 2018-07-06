@@ -15,11 +15,13 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully')
+  $('#message').text("X's turn!")
   $('#message').css('background-color', 'green')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
   $('#logInModal').modal('hide')
+  $('#sign-in-modal').hide()
+  $('#sign-up-modal').hide()
   $('#game-board').show()
   $('#sign-out-modal').show()
 }
