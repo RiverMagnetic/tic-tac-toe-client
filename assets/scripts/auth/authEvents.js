@@ -17,7 +17,7 @@ const openModal = function (event) {
 const onSignUp = function (event) {
   event.preventDefault()
   console.log('sign up ran!')
-    const data = getFormFields(this)
+  const data = getFormFields(this)
   authApi.signUp(data)
     .then(authUi.signUpSuccess)
     .catch(authUi.signUpFailure)
@@ -32,21 +32,19 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   console.log('sign in ran!')
-
   const data = getFormFields(this)
   authApi.signIn(data)
     .then(authUi.signInSuccess)
     .catch(authUi.signInFailure)
 }
 
-// const onSignOut = function (event) {
-//   event.preventDefault()
-//   console.log('sign out ran')
-
-//   authApi.signOut()
-//     .then(authUi.signOutSuccess)
-//     .catch(authUi.signOutFailure)
-// }
+const onSignOut = function (event) {
+  event.preventDefault()
+  console.log('sign out ran')
+  authApi.signOut()
+    .then(authUi.signOutSuccess)
+    .catch(authUi.signOutFailure)
+}
 
 // const onChangePassword = function (event) {
 //   event.preventDefault()
@@ -61,7 +59,7 @@ const onSignIn = function (event) {
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  // $('#sign-out').on('submit', onSignOut)
+  $('#sign-out').on('submit', onSignOut)
   // $('#change-password').on('submit', onChangePassword)
 }
 
