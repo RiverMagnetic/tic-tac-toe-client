@@ -19,6 +19,9 @@ const signInSuccess = function (data) {
   $('#message').css('background-color', 'green')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
+  $('#logInModal').modal('hide')
+  $('#game-board').show()
+  $('#sign-out-modal').show()
 }
 
 const signInFailure = function (error) {
