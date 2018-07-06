@@ -27,18 +27,18 @@ const signInFailure = function (error) {
   console.error('signInFailure ran. Error is :', error)
 }
 
-// const signOutSuccess = function () {
-//   $('#message').text('Signed out successfully')
-//   $('#message').css('background-color', 'green')
-//   console.log('signOutSuccess ran and nothing was returned!')
-//   store.user = null
-// }
+const signOutSuccess = function () {
+  $('#message').text('Signed out successfully')
+  $('#message').css('background-color', 'green')
+  console.log('signOutSuccess ran and nothing was returned!')
+  store.user = null
+}
 
-// const signOutFailure = function (error) {
-//   $('#message').text('Error on sign out')
-//   $('#message').css('background-color', 'red')
-//   console.error('signOutFailure ran. Error is :', error)
-// }
+const signOutFailure = function (error) {
+  $('#message').text('Error on sign out')
+  $('#message').css('background-color', 'red')
+  console.error('signOutFailure ran. Error is :', error)
+}
 
 // const changePasswordSuccess = function () {
 //   $('#message').text('Changed password successfully')
@@ -56,10 +56,10 @@ module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  signOutSuccess,
+  signOutFailure
   // ,
-//   signOutSuccess,
-//   signOutFailure,
 //   changePasswordSuccess,
 //   changePasswordFailure
 }
