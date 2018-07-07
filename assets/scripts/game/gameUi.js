@@ -1,7 +1,7 @@
 'use strict'
 
 const onCreateGameSuccess = function (data) {
-  $('#message').text(`X's turn!`)
+  $('#message').text(`x's turn!`)
   $('#message').css('background-color', 'green')
   console.log('onCreateGameSuccess ran. Data is :', data)
 }
