@@ -13,14 +13,14 @@
   
   const game = {
     cells: ['', '', '', '', '', '', '', '', ''],
-    love: ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'],
+    love: ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x'],
     move: function (index) {
       this.cells[index] = this.love.pop()
       return this.cells[index]
     },
     // is the cell the player clicked on occupied? (this function is called in game/events.js)
     marked: function (index) {
-      if (this.cells[index] === 'X' || this.cells[index] === 'O') {
+      if (this.cells[index] === 'x' || this.cells[index] === 'o') {
         return true
       } else {
         return false
@@ -62,10 +62,10 @@
         // mark the board by placing the letter in the cell
         $('#' + index).append(affection)
         // prompting the player to take their turn
-        if (affection === 'X') {
-          $('#message').html(`O's turn!`)
-        } else if (affection === 'O') {
-          $('#message').html(`X's turn!`)
+        if (affection === 'x') {
+          $('#message').html(`o's turn!`)
+        } else if (affection === 'o') {
+          $('#message').html(`x's turn!`)
         }
         if (game.checkForWin(affection) === true) {
           game.checkForWinMsg(affection)
