@@ -2,7 +2,7 @@
 // element.id = 'myDiv'
 // element.innerHTML = 'Hello World!'
 // document.body.appendChild(element)
-
+// const gameEvents = require('./game/events')
 // const authEvents = require('./auth/events')
 // const config = require('./config')
 
@@ -77,14 +77,22 @@
       // if player tries to put mark in marked cell, prompt to choose another cell
       } else if (game.marked(index) === true) {
         $('#message').html(`That square has already been taken. Choose another.`)
-        // TODO if there is no winner, and there are no empty strings in the love array (which means the game 
-        // is over), final mark in game should say "It's a draw!", not tell next player to take a turn. 
       }
     }
   }
 
+  // to wipe the board/start a new game
+  const createGame = function () {
+    game.cells = ['', '', '', '', '', '', '', '', '']
+    console.log(game.cells)
+    game.love = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
+    console.log(game.love)
+    $('.cell').html('')
+    //TODO connect this to gameUI's onCreateGameSuccess to make correct message appear
+  }
 
   module.exports = {
     game,
-    mark
+    mark,
+    createGame
   }
