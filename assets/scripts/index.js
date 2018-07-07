@@ -12,11 +12,12 @@ const gameEvents = require('./game/gameEvents')
 
 
 
-
+// on document ready
 $(() => {
 
   $('#game-board').hide()
   $('#sign-out-modal').hide()
+  $('#game-create').hide()
 
   // create a function to hold event handlers
   const addHandlers = () => {
