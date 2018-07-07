@@ -37,6 +37,11 @@ const signOutSuccess = function () {
   $('#message').css('background-color', 'green')
   console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
+  $('#sign-in-modal').show()
+  $('#sign-up-modal').show()
+  $('#game-board').hide()
+  $('#sign-out-modal').hide()
+  $('#signOutModal').modal('hide')
 }
 
 const signOutFailure = function (error) {
