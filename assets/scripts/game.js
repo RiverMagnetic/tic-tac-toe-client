@@ -70,7 +70,10 @@
         // if this is the winning mark, tell the player they won
         if (game.checkForWin(affection) === true) {
           game.checkForWinMsg(affection)
-        } 
+        } else if (game.love.length === 0) {
+          $('#game-board').hide()
+          $('#message').html(`It's a draw! Game Over.`)
+        }
       // if player tries to put mark in marked cell, prompt to choose another cell
       } else if (game.marked(index) === true) {
         $('#message').html(`That square has already been taken. Choose another.`)
