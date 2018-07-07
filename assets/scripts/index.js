@@ -25,6 +25,10 @@ $(() => {
       event.preventDefault()
       game.mark(event.target.id)
     })
+    $('#game-create').on('click', function (event) {
+      event.preventDefault()
+      game.createGame()
+    })
   }
   // call the addHandlers function that was just defined
   addHandlers()
