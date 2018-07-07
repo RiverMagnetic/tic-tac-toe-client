@@ -6,6 +6,7 @@ const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
   console.log('signUpSuccess ran. Data is :', data)
+  $('#sign-up-modal').hide()
 }
 
 const signUpFailure = function (error) {
