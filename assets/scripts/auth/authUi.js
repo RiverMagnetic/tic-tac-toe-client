@@ -23,6 +23,7 @@ const signInSuccess = function (data) {
   $('#sign-in-modal').hide()
   $('#sign-up-modal').hide()
   $('#game-board').show()
+  $('#game-create').show()
   $('#sign-out-modal').show()
 }
 
