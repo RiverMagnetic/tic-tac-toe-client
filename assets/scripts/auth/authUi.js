@@ -9,7 +9,7 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (error) {
-  $('#message').text('Error on sign up')
+  $('#message').text('Missing email or password')
   $('#message').css('background-color', 'red')
   console.error('signUpFailure ran. Error is :', error)
 }
@@ -27,13 +27,14 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-  $('#message').text('Error on sign in')
+  $('#logInModal').modal('hide')
+  $('#message').text('Incorrect Email or Password')
   $('#message').css('background-color', 'red')
   console.error('signInFailure ran. Error is :', error)
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Signed out successfully')
+  $('#message').text('Signed out')
   $('#message').css('background-color', 'green')
   console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
