@@ -51,10 +51,10 @@
   
   const mark = function (index) {
     // console.log(index)
-  // only allow player to mark the board if the game has not been won
+    // only allow player to mark the board if the game has not been won
     if (game.checkForWin() === false) {
-    // only allow player to mark the board if the cell player clicked on has not been marked.
-    // together, these two if statements disallow player from marking board after game is over
+      // only allow player to mark the board if the cell player clicked on has not been marked.
+      // together, these two if statements disallow player from marking board after game is over
       if (game.marked(index) === false) {
         // console.log(game.marked(index))
         const affection = game.move(index)
@@ -67,16 +67,19 @@
         } else if (affection === 'o') {
           $('#message').html(`x's turn!`)
         }
+        // if this is the winning mark, tell the player they won
         if (game.checkForWin(affection) === true) {
           game.checkForWinMsg(affection)
-        }
-        // TODO if there is no winner, and there are no empty strings in the love array (which means the game 
-        // is over), final mark in game should say "It's a draw!", not tell next player to take a turn. 
+        } 
+      // if player tries to put mark in marked cell, prompt to choose another cell
       } else if (game.marked(index) === true) {
         $('#message').html(`That square has already been taken. Choose another.`)
+        // TODO if there is no winner, and there are no empty strings in the love array (which means the game 
+        // is over), final mark in game should say "It's a draw!", not tell next player to take a turn. 
       }
     }
   }
+
 
   module.exports = {
     game,
