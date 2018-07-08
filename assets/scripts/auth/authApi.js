@@ -31,23 +31,22 @@ const signOut = function () {
   })
 }
 
-// const changePassword = function (data) {
-//   console.log('data is ', data)
-//   return $.ajax({
-//     url: config.apiUrl + '/change-password',
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//     // data: data
-//   })
-// }
+const changePassword = function (data) {
+  console.log('data is ', data)
+  return $.ajax({
+    url: config.apiUrl + '/change-password',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+    // data: data
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
-  signOut
-// ,
-//   changePassword
+  signOut,
+  changePassword
 }
