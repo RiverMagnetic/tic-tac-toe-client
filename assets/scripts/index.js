@@ -27,7 +27,7 @@ $(() => {
     })
     $('#game-create').on('click', function (event) {
       event.preventDefault()
-      game.createGame()
+      game.createGame(event)
     })
   }
   // call the addHandlers function that was just defined
