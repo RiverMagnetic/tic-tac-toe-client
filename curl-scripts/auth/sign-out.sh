@@ -1,8 +1,7 @@
-# ID=2 TOKEN=tokengoeshere sh curl-scripts/sign-out.sh
+# TOKEN=tokengoeshere sh curl-scripts/auth/sign-out.sh
 
 curl "https://tic-tac-toe-wdi.herokuapp.com/sign-out" \
-  --include \
-  --request DELETE \
+  --include --request DELETE \
   --header "Authorization: Token token=${TOKEN}"
 
 echo
