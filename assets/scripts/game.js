@@ -2,7 +2,7 @@
 // element.id = 'myDiv'
 // element.innerHTML = 'Hello World!'
 // document.body.appendChild(element)
-// const gameEvents = require('./game/events')
+const gameEvents = require('./game/gameEvents.js')
 // const authEvents = require('./auth/events')
 // const config = require('./config')
 
@@ -82,12 +82,13 @@
   }
 
   // to wipe the board/start a new game
-  const createGame = function () {
+  const createGame = function (event) {
     game.cells = ['', '', '', '', '', '', '', '', '']
     console.log(game.cells)
     game.love = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
     console.log(game.love)
     $('.cell').text('')
+    gameEvents.onCreateGame(event)
     // TODO connect this to gameUI's onCreateGameSuccess to make correct message appear
   }
 
