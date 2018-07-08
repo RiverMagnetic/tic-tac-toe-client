@@ -87,8 +87,8 @@
     console.log(game.cells)
     game.love = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
     console.log(game.love)
-    $('.cell').html('')
-    //TODO connect this to gameUI's onCreateGameSuccess to make correct message appear
+    $('.cell').text('')
+    // TODO connect this to gameUI's onCreateGameSuccess to make correct message appear
   }
 
   module.exports = {
