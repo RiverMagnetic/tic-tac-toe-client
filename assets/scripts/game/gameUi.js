@@ -4,6 +4,9 @@ const onCreateGameSuccess = function (data) {
   $('#message').text(`x's turn!`)
   $('#message').css('background-color', 'green')
   console.log('onCreateGameSuccess ran. Data is :', data)
+  $('#game-board').show()
+  // this is where data will be captured to use for the patch
+  // store.game = data.game
 }
 
 const onCreateGameFailure = function (error) {
@@ -16,6 +19,7 @@ const onGameIndexSuccess = function (data) {
   $('#message').text('All Games successfully received')
   $('#message').css('background-color', 'green')
   console.log('onGameIndexSuccess ran. Data is :', data.games)
+  
 }
 
 const onGameIndexFailure = function (error) {
