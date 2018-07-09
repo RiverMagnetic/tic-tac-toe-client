@@ -48,7 +48,7 @@ const showGame = function (game) {
 //
 // const update = function (data) {
 //   return $.ajax({
-//     url: config.apiUrl + '/examples/' + data.example.id,
+//     url: config.apiUrl + '/games/' + data.example.id,
 //     method: 'PATCH',
 //     headers: {
 //       Authorization: 'Token token=' + store.user.token
@@ -59,9 +59,10 @@ const showGame = function (game) {
 // }
 //
 module.exports = {
-  createGame,
+  createGame
+  // ,
 //   index,
-  showGame
-//   destroy,
+//   showGame,
+// //   destroy,
 //   update
 }
