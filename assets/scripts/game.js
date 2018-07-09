@@ -18,7 +18,7 @@ const gameEvents = require('./game/gameEvents.js')
       this.cells[index] = this.love.pop()
       return this.cells[index]
     },
-    // is the cell the player clicked on occupied? (this function is called in game/events.js)
+    // is the cell the player clicked on occupied?
     marked: function (index) {
       if (this.cells[index] === 'x' || this.cells[index] === 'o') {
         return true
@@ -50,7 +50,7 @@ const gameEvents = require('./game/gameEvents.js')
   }
   
   const mark = function (index) {
-    // console.log(index)
+    console.log(index)
     // only allow player to mark the board if the game has not been won
     if (game.checkForWin() === false) {
       // only allow player to mark the board if the cell player clicked on has not been marked.
@@ -79,6 +79,15 @@ const gameEvents = require('./game/gameEvents.js')
         $('#message').html(`That square has already been taken. Choose another.`)
       }
     }
+    const data = { 
+      "game": { 
+        "cell": { 
+          "index": index,
+          "value": game.move(index) 
+        },
+        "over": game.checkForWin(affection)
+      }
+    }
   }
 
   // to wipe the board/start a new game
@@ -89,7 +98,6 @@ const gameEvents = require('./game/gameEvents.js')
     console.log(game.love)
     $('.cell').text('')
     gameEvents.onCreateGame(event)
-    // TODO connect this to gameUI's onCreateGameSuccess to make correct message appear
   }
 
   module.exports = {
