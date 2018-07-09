@@ -51,7 +51,7 @@ const onShowGameFailure = function (error) {
 const onUpdateGameSuccess = function () {
   // $('#message').text('Game successfully updated')
   $('#message').css('background-color', 'green')
-  console.log('Example successfully updated')
+  console.log('Game successfully updated')
 }
 
 const onUpdateGameFailure = function (error) {
