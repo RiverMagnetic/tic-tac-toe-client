@@ -25,7 +25,7 @@ $(() => {
       event.preventDefault()
       game.mark(event.target.id)
     })
-    $('#game-create').on('click', function (event) {
+    $('#game-create').on('submit', function (event) {
       event.preventDefault()
       game.createGame(event)
     })
