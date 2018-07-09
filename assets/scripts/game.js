@@ -82,10 +82,10 @@ const gameEvents = require('./game/gameEvents.js')
     const data = { 
       "game": { 
         "cell": { 
-          "index": index,
-          "value": game.move(index) 
+          // "index": index,
+          // "value": game.move(index) 
         },
-        "over": game.checkForWin(affection)
+        // "over": game.checkForWin(affection)
       }
     }
   }
