@@ -68,26 +68,34 @@ const gameEvents = require('./game/gameEvents.js')
           $('#message').html(`x's turn!`)
         }
         // if this is the winning mark, tell the player they won
+        let gameOver = false
         if (game.checkForWin(affection) === true) {
+          gameOver = true
           game.checkForWinMsg(affection)
         } else if (game.love.length === 0) {
+          gameOver = true
           $('#game-board').hide()
           $('#message').html(`It's a draw! Game Over.`)
         }
+        const data = { affection, gameOver, index }
+        gameEvents.onUpdateGame(data)
+        console.log(data)
       // if player tries to put mark in marked cell, prompt to choose another cell
       } else if (game.marked(index) === true) {
         $('#message').html(`That square has already been taken. Choose another.`)
       }
     }
-    const data = { 
-      "game": { 
-        "cell": { 
-          // "index": index,
-          // "value": game.move(index) 
-        },
-        // "over": game.checkForWin(affection)
-      }
-    }
+
+    
+    // const data = { 
+    //   "game": { 
+    //     "cell": { 
+    //       // "index": index,
+    //       // "value": game.move(index) 
+    //     },
+    //     // "over": game.checkForWin(affection)
+    //   }
+    // }
   }
 
   // to wipe the board/start a new game
