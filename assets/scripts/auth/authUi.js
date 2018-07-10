@@ -25,6 +25,7 @@ const signInSuccess = function (data) {
   $('#sign-up-modal').hide()
   $('#game-create').show()
   $('#sign-out-modal').show()
+  $('#change-password-modal').show()
 }
 
 const signInFailure = function (error) {
@@ -44,6 +45,7 @@ const signOutSuccess = function () {
   $('#game-board').hide()
   $('#game-create').hide()
   $('#sign-out-modal').hide()
+  $('#change-password-modal').hide()
   $('#signOutModal').modal('hide')
 }
 
@@ -57,12 +59,14 @@ const changePasswordSuccess = function () {
   $('#message').text('Changed password successfully')
   $('#message').css('background-color', 'green')
   console.log('changePasswordSuccess ran and nothing was returned!')
+  $('#changePasswordModal').hide()
 }
 
 const changePasswordFailure = function (error) {
   $('#message').text('Error on change password')
   $('#message').css('background-color', 'red')
   console.error('changePasswordFailure ran. Error is :', error)
+  
 }
 
 module.exports = {
