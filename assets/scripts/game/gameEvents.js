@@ -15,32 +15,32 @@ const onCreateGame = function (event) {
     .catch(gameUi.onCreateGameFailure)
 }
 
-const onIndexGames = function (event) {
-  event.preventDefault()
-  console.log('onIndexGames ran!')
+// const onIndexGames = function (event) {
+//   event.preventDefault()
+//   console.log('onIndexGames ran!')
 
-  gameApi.index()
-    .then(gameUi.onGameIndexSuccess)
-    .catch(gameUi.onGameIndexFailure)
-}
+//   gameApi.index()
+//     .then(gameUi.onGameIndexSuccess)
+//     .catch(gameUi.onGameIndexFailure)
+// }
 
-const onShowGame = function (event) {
-  event.preventDefault()
-  console.log('onShowGame ran!')
+// const onShowGame = function (event) {
+//   event.preventDefault()
+//   console.log('onShowGame ran!')
 
-  const data = getFormFields(event.target)
-  const game = data.game
+//   const data = getFormFields(event.target)
+//   const game = data.game
 
-  if (game.id.length !== 0) {
-    gameApi.showGame(game)
-      .then(gameUi.onShowGameSuccess)
-      .catch(gameUi.onShowGameFailure)
-  } else {
-    // $('#message').html('<p>Please provide an example id!</p>')
-    $('#message').css('background-color', 'red')
-    console.log('May the force be with you!')
-  }
-}
+//   if (game.id.length !== 0) {
+//     gameApi.showGame(game)
+//       .then(gameUi.onShowGameSuccess)
+//       .catch(gameUi.onShowGameFailure)
+//   } else {
+//     // $('#message').html('<p>Please provide an example id!</p>')
+//     $('#message').css('background-color', 'red')
+//     console.log('May the force be with you!')
+//   }
+// }
 // //
 // // const onDeleteExample = function (event) {
 // //   event.preventDefault()
@@ -60,39 +60,41 @@ const onShowGame = function (event) {
 // //   }
 // // }
 // //
-const onUpdateGame = function (event) {
-  event.preventDefault()
+const onUpdateGame = function (data) {
   console.log('onUpdateGame ran!')
+  console.log(data)
 
-  const data = getFormFields(event.target)
-  const game = data.game
+  // const data = getFormFields(event.target)
+  // const game = data.game
+  // console.log(data)
 
-  if (game.text === '') {
-    //     $('#message').html('<p>Text is required</p>')
-    $('#message').css('background-color', 'red')
-    console.log('Letter is required!')
-    return false
-  }
-  if (game.id.length !== 0) {
+  // if (game.text === '') {
+  //   //     $('#message').html('<p>Text is required</p>')
+  //   $('#message').css('background-color', 'red')
+  //   console.log('Letter is required!')
+  //   return false
+  // }
+  // if (game.id.length !== 0) {
     gameApi.update(data)
       .then(gameUi.onUpdateGameSuccess)
       .catch(gameUi.onUpdateGameFailure)
-  } else {
-    //     $('#message').html('<p>Please provide a game id!</p>')
-    $('#message').css('background-color', 'red')
-    console.log('Please provide a game id!')
-  }
+  // } else {
+  //   //     $('#message').html('<p>Please provide a game id!</p>')
+  //   $('#message').css('background-color', 'red')
+  //   console.log('Please provide a game id!')
+  // }
 }
 
 const addHandlers = () => {
   $('#login').on('submit', onCreateGame)
-  $('#game-index').on('submit', onIndexGames)
-  $('#show-game').on('submit', onShowGame)
+  // $('#game-index').on('submit', onIndexGames)
+  // $('#show-game').on('submit', onShowGame)
   // $('#example-delete').on('submit', onDeleteExample)
-  $('#game-update').on('submit', onUpdateGame)
+  // $('.cell').on('click', onUpdateGame)
 }
 
 module.exports = {
   addHandlers,
-  onCreateGame
+  onCreateGame,
+  onUpdateGame
 }
