@@ -7,7 +7,7 @@ const gameUi = require('./gameUi')
 
 const onCreateGame = function (event) {
   event.preventDefault()
-  console.log('onCreateGame ran!')
+  // console.log('onCreateGame ran!')
 
   const data = getFormFields(event.target)
   gameApi.createGame(data)
@@ -17,7 +17,7 @@ const onCreateGame = function (event) {
 
 // const onIndexGames = function (event) {
 //   event.preventDefault()
-//   console.log('onIndexGames ran!')
+//   // console.log('onIndexGames ran!')
 
 //   gameApi.index()
 //     .then(gameUi.onGameIndexSuccess)
@@ -26,7 +26,7 @@ const onCreateGame = function (event) {
 
 // const onShowGame = function (event) {
 //   event.preventDefault()
-//   console.log('onShowGame ran!')
+//   // console.log('onShowGame ran!')
 
 //   const data = getFormFields(event.target)
 //   const game = data.game
@@ -38,13 +38,13 @@ const onCreateGame = function (event) {
 //   } else {
 //     // $('#message').html('<p>Please provide an example id!</p>')
 //     $('#message').css('background-color', 'red')
-//     console.log('May the force be with you!')
+//     // console.log('May the force be with you!')
 //   }
 // }
 // //
 // // const onDeleteExample = function (event) {
 // //   event.preventDefault()
-// //   console.log('onDeleteExample ran!')
+// //   // console.log('onDeleteExample ran!')
 // //
 // //   const data = getFormFields(event.target)
 // //   const example = data.example
@@ -56,22 +56,22 @@ const onCreateGame = function (event) {
 // //   } else {
 // //     $('#message').html('<p>Please provide an example id!</p>')
 // //     $('#message').css('background-color', 'red')
-// //     console.log('Please provide an example id!')
+// //     // console.log('Please provide an example id!')
 // //   }
 // // }
 // //
 const onUpdateGame = function (data) {
-  console.log('onUpdateGame ran!')
-  console.log(data)
+  // console.log('onUpdateGame ran!')
+  // console.log(data)
 
   // const data = getFormFields(event.target)
   // const game = data.game
-  // console.log(data)
+  // // console.log(data)
 
   // if (game.text === '') {
   //   //     $('#message').html('<p>Text is required</p>')
   //   $('#message').css('background-color', 'red')
-  //   console.log('Letter is required!')
+  //   // console.log('Letter is required!')
   //   return false
   // }
   // if (game.id.length !== 0) {
@@ -81,7 +81,7 @@ const onUpdateGame = function (data) {
   // } else {
   //   //     $('#message').html('<p>Please provide a game id!</p>')
   //   $('#message').css('background-color', 'red')
-  //   console.log('Please provide a game id!')
+  //   // console.log('Please provide a game id!')
   // }
 }
 
