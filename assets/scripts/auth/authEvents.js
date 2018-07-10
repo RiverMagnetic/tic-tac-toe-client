@@ -9,15 +9,15 @@ const authUi = require('./authUi')
 const openModal = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
-  console.log(data.form)
+  // console.log(data)
+  // console.log(data.form)
   $('#signUpModal').modal('hide')
   $('#logInModal').modal('hide')
   $('#changePasswordModal').modal('hide')
 }
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('sign up ran!')
+  // console.log('sign up ran!')
   const data = getFormFields(this)
   authApi.signUp(data)
     .then(authUi.signUpSuccess)
@@ -26,13 +26,13 @@ const onSignUp = function (event) {
 
 // testing export to index.js using a console log in a cancel button that I hope to use in the future...
 // const cancelSignUpButton = function (event) {
-//   console.log('cancelSiginUp creation!')
+//   // console.log('cancelSiginUp creation!')
 // }
 
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('sign in ran!')
+  // console.log('sign in ran!')
   const data = getFormFields(this)
   authApi.signIn(data)
     .then(authUi.signInSuccess)
@@ -41,7 +41,7 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('sign out ran')
+  // console.log('sign out ran')
   authApi.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFailure)
@@ -49,7 +49,7 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('change password ran!')
+  // console.log('change password ran!')
 
   const data = getFormFields(this)
   authApi.changePassword(data)
