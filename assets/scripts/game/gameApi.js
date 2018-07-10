@@ -26,15 +26,15 @@ const createGame = function (data) {
 //   })
 // }
 //
-const showGame = function (game) {
-  return $.ajax({
-    url: config.apiUrl + '/games/' + game.id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
+// const showGame = function (game) {
+//   return $.ajax({
+//     url: config.apiUrl + '/games/' + game.id,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 //
 // const destroy = function (id) {
 //   return $.ajax({
@@ -46,23 +46,33 @@ const showGame = function (game) {
 //   })
 // }
 //
-// const update = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/games/' + data.example.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//     // data: data
-//   })
-// }
-//
+
+const update = function (data) {
+  console.log(store.game.id)
+  console.log(data)
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id, 
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: { 
+      "game": { 
+        "cell": { 
+          "index": data.index,
+          "value": data.affection
+        },
+        "over": data.gameOver
+      }
+    }
+  })
+}
+
 module.exports = {
-  createGame
+  createGame,
   // ,
 //   index,
 //   showGame,
 // //   destroy,
-//   update
+  update
 }
