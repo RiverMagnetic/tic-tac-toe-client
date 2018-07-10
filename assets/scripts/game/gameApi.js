@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createGame = function (data) {
-  console.log('data: ', data)
+  // console.log('data: ', data)
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -48,8 +48,8 @@ const createGame = function (data) {
 //
 
 const update = function (data) {
-  console.log(store.game.id)
-  console.log(data)
+  // console.log(store.game.id)
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id, 
     method: 'PATCH',
