@@ -1,12 +1,18 @@
 'use strict'
 
+const store = require('../store')
+
 const onCreateGameSuccess = function (data) {
   $('#message').text(`x's turn!`)
   $('#message').css('background-color', 'green')
   console.log('onCreateGameSuccess ran. Data is :', data)
   $('#game-board').show()
   // this is where data will be captured to use for the patch
-  // store.game = data.game
+  store.game = data.game
+  console.log(store.game)
+  store.game.id = data.game.id
+  console.log(store.game.id)
+  // 
 }
 
 const onCreateGameFailure = function (error) {
@@ -15,30 +21,30 @@ const onCreateGameFailure = function (error) {
   console.error('onCreateGameFailure ran. Error is :', error)
 }
 
-const onGameIndexSuccess = function (data) {
-  $('#message').text('All Games successfully received')
-  $('#message').css('background-color', 'green')
-  console.log('onGameIndexSuccess ran. Data is :', data.games)
+// const onGameIndexSuccess = function (data) {
+//   $('#message').text('All Games successfully received')
+//   $('#message').css('background-color', 'green')
+//   console.log('onGameIndexSuccess ran. Data is :', data.games)
   
-}
+// }
 
-const onGameIndexFailure = function (error) {
-  $('#message').text('Error on getting examples')
-  $('#message').css('background-color', 'red')
-  console.error('onGameIndexFailure ran. Error is :', error)
-}
+// const onGameIndexFailure = function (error) {
+//   $('#message').text('Error on getting examples')
+//   $('#message').css('background-color', 'red')
+//   console.error('onGameIndexFailure ran. Error is :', error)
+// }
 
-const onShowGameSuccess = function (data) {
-  $('#message').text('Previous game successfully retrieved')
-  $('#message').css('background-color', 'green')
-  console.log('onShowGameSuccess ran. Data is :', data)
-}
+// const onShowGameSuccess = function (data) {
+//   $('#message').text('Previous game successfully retrieved')
+//   $('#message').css('background-color', 'green')
+//   console.log('onShowGameSuccess ran. Data is :', data)
+// }
 
-const onShowGameFailure = function (error) {
-  $('#message').text('Error on getting previous game')
-  $('#message').css('background-color', 'red')
-  console.error('onShowGameFailure ran. Error is :', error)
-}
+// const onShowGameFailure = function (error) {
+//   $('#message').text('Error on getting previous game')
+//   $('#message').css('background-color', 'red')
+//   console.error('onShowGameFailure ran. Error is :', error)
+// }
 
 // const onDestroySuccess = function () {
 //   $('#message').text('Example successfully deleted')
@@ -52,10 +58,11 @@ const onShowGameFailure = function (error) {
 //   console.error('onDestroyFailure ran. Error is :', error)
 // }
 
-const onUpdateGameSuccess = function () {
+const onUpdateGameSuccess = function (data) {
   // $('#message').text('Game successfully updated')
   $('#message').css('background-color', 'green')
   console.log('Game successfully updated')
+  console.log(data.game)
 }
 
 const onUpdateGameFailure = function (error) {
@@ -67,10 +74,10 @@ const onUpdateGameFailure = function (error) {
 module.exports = {
   onCreateGameSuccess,
   onCreateGameFailure,
-  onGameIndexSuccess,
-  onGameIndexFailure,
-  onShowGameSuccess,
-  onShowGameFailure,
+  // onGameIndexSuccess,
+  // onGameIndexFailure,
+  // onShowGameSuccess,
+  // onShowGameFailure,
   // onDestroySuccess,
   // onDestroyFailure,
   onUpdateGameSuccess,
