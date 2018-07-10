@@ -5,26 +5,26 @@ const store = require('../store')
 const onCreateGameSuccess = function (data) {
   $('#message').text(`x's turn!`)
   $('#message').css('background-color', 'green')
-  console.log('onCreateGameSuccess ran. Data is :', data)
+  // console.log('onCreateGameSuccess ran. Data is :', data)
   $('#game-board').show()
   // this is where data will be captured to use for the patch
   store.game = data.game
-  console.log(store.game)
+  // console.log(store.game)
   store.game.id = data.game.id
-  console.log(store.game.id)
+  // console.log(store.game.id)
   // 
 }
 
 const onCreateGameFailure = function (error) {
   $('#message').text('Error on creating example')
   $('#message').css('background-color', 'red')
-  console.error('onCreateGameFailure ran. Error is :', error)
+  // console.error('onCreateGameFailure ran. Error is :', error)
 }
 
 // const onGameIndexSuccess = function (data) {
 //   $('#message').text('All Games successfully received')
 //   $('#message').css('background-color', 'green')
-//   console.log('onGameIndexSuccess ran. Data is :', data.games)
+//   // console.log('onGameIndexSuccess ran. Data is :', data.games)
   
 // }
 
@@ -37,7 +37,7 @@ const onCreateGameFailure = function (error) {
 // const onShowGameSuccess = function (data) {
 //   $('#message').text('Previous game successfully retrieved')
 //   $('#message').css('background-color', 'green')
-//   console.log('onShowGameSuccess ran. Data is :', data)
+//   // console.log('onShowGameSuccess ran. Data is :', data)
 // }
 
 // const onShowGameFailure = function (error) {
@@ -49,7 +49,7 @@ const onCreateGameFailure = function (error) {
 // const onDestroySuccess = function () {
 //   $('#message').text('Example successfully deleted')
 //   $('#message').css('background-color', 'green')
-//   console.log('Example successfully deleted')
+//   // console.log('Example successfully deleted')
 // }
 //
 // const onDestroyFailure = function (error) {
@@ -61,14 +61,14 @@ const onCreateGameFailure = function (error) {
 const onUpdateGameSuccess = function (data) {
   // $('#message').text('Game successfully updated')
   $('#message').css('background-color', 'green')
-  console.log('Game successfully updated')
-  console.log(data.game)
+  // console.log('Game successfully updated')
+  // console.log(data.game)
 }
 
 const onUpdateGameFailure = function (error) {
   $('#message').text('Choose another square')
   $('#message').css('background-color', 'red')
-  console.error('onUpdateGameFailure ran. Error is :', error)
+  // console.error('onUpdateGameFailure ran. Error is :', error)
 }
 
 module.exports = {
