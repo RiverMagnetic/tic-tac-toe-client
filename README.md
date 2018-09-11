@@ -15,6 +15,9 @@ Each day I made a sprint schedule that I knew was highly improbable to meet. The
 * give myself a motivational challenge,
 * try to get a broad view of how all the requirements would work together by touching on them all briefly at least once (this seemed important since I was new to working with API's), and
 * to try to avoid going down too many rabbit holes (since the next thing on the schedule was always minutes away).
+
 I think it was a worthy experiment. I believe that the first project we are given to do in General Assembly is not only about the project content. It's also about trying and learning what project management approaches serve us or don't in this environment, and refactoring our approaches accordingly for next time. I like how I've approached the project so far and will refactor according to what I learn as I continue to improve it.
+
 I used source control to keep track of changes in my project. Although I haven't experienced any actual setbacks in terms of lost work, committing as frequently as I think I should is a work in progress. My habits with this aren't as good as I'd like them to be so far, but I'm continually taking notice, thinking about how to do better, and experimenting with approaches... I'm definitely improving!
+
 I solved problems that came up along the way by using console logs, checking the console for error messages, doing research on the internet, looking over what we covered in class, asking questions of instructors, and using the issue queue. I got in the habit of checking how my app was rendering on my local browser every time I added something, so that if anything went wrong I wouldn't wonder how far back I made a mistake.
